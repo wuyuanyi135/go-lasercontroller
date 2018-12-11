@@ -5,4 +5,5 @@ RUN apk add --no-cache git protobuf-dev \
 
 WORKDIR /root
 COPY . .
-RUN build.sh
+RUN go get github.com/wuyuanyi135/lasercontroller
+RUN cd $GOPATH/wuyuanyi135/lasercontroller && go generate
