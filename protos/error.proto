@@ -1,0 +1,17 @@
+syntax = "proto3";
+option go_package = "laserctrlgrpc";
+import "google/protobuf/timestamp.proto";
+enum Severity {
+    FATAL = 0;
+    ERROR = 1;
+    WARNING = 2;
+}
+message Error {
+    string message = 1;
+
+    google.protobuf.Timestamp timestamp = 2;
+
+    Severity level = 3;
+}
+
+//obsolete

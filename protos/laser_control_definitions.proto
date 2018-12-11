@@ -1,0 +1,60 @@
+syntax = "proto3";
+option go_package = "laserctrlgrpc";
+
+import "error.proto";
+
+message SerialDeviceMapping {
+    string name = 1;
+    string destination = 2;
+}
+message SerialListResponse {
+    repeated SerialDeviceMapping device_list= 2;
+}
+
+message ErrorResponse {
+    repeated Error err = 1;
+}
+message EmptyResponse {
+}
+message ConnectRequest {
+    oneof device_identifier {
+        string name = 1;
+        string path = 2;
+    }
+}
+
+message DriverVersionResponse {
+    string version = 2;
+}
+
+message DeviceVersionResponse {
+    uint32 hardware_version = 2;
+    uint32 firmware_version = 3;
+}
+
+message PowerConfiguration {
+    bool master_power = 1;
+}
+
+message SetPowerRequest {
+    PowerConfiguration power = 2;
+}
+
+message LaserConfiguration {
+    uint32 exposure_tick = 1;
+    uint32 pulse_delay = 2;
+    uint32 digital_filter = 3;
+}
+
+message SetLaserRequest {
+    LaserConfiguration laser = 2;
+    bool commit = 3;
+}
+
+message ControlLaserRequest {
+    bool enable = 1;
+}
+
+message Status {
+    bool laser_state = 2;
+}

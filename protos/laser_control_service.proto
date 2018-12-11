@@ -1,0 +1,27 @@
+syntax = "proto3";
+option go_package = "laserctrlgrpc";
+
+import "google/protobuf/empty.proto";
+import "laser_control_definitions.proto";
+service LaserControlService {
+    rpc GetSerialDevices(google.protobuf.Empty) returns (SerialListResponse) {}
+    rpc GetDriverVersion(google.protobuf.Empty) returns (DriverVersionResponse) {}
+
+    rpc Connect(ConnectRequest) returns (EmptyResponse) {}
+    rpc Disconnect(google.protobuf.Empty) returns (EmptyResponse) {}
+
+    rpc GetDeviceVersion(google.protobuf.Empty) returns (DeviceVersionResponse) {}
+
+    rpc SetPower(SetPowerRequest) returns (EmptyResponse) {}
+    rpc GetPower(google.protobuf.Empty) returns (PowerConfiguration) {}
+
+    rpc SetLaserParam(SetLaserRequest) returns (EmptyResponse) {}
+    rpc GetLaserParam(google.protobuf.Empty) returns (LaserConfiguration) {}
+
+    rpc CommitParameter(google.protobuf.Empty) returns (EmptyResponse) {}
+
+    rpc ControlLaser(ControlLaserRequest) returns (EmptyResponse) {}
+    rpc GetStatus (google.protobuf.Empty) returns (Status) {}
+
+    rpc ResetController(google.protobuf.Empty) returns (EmptyResponse) {}
+}
