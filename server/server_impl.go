@@ -273,13 +273,38 @@ func (s *LaserCtrlServer) CommitParameter(ctx context.Context, req *empty.Empty)
 	return &resp, err
 }
 
-func (LaserCtrlServer) ControlLaser(context.Context, *laserctrlgrpc.ControlLaserRequest) (*laserctrlgrpc.EmptyResponse, error) {
-	panic("implement me")
+func (s *LaserCtrlServer) ControlLaser(ctx context.Context, req *laserctrlgrpc.ControlLaserRequest) (*laserctrlgrpc.EmptyResponse, error) {
+	resp := laserctrlgrpc.EmptyResponse{}
+	ctx, _ = context.WithTimeout(ctx, time.Second)
+
+	var cmd command.CommandMeta
+	if req.Enable {
+		cmd = command.CommandArmTrigger
+	} else {
+		cmd = command.CommandCancelTrigger
+	}
+
+	_, err := s.deviceRequest(ctx, serial.SerialCommand{
+		Command: cmd,
+	})
+	if err != nil {
+		log.Errorf("Failed to control laser: %s", err.Error())
+		return nil, err
+	}
+	return &resp, err
 }
 
-func (LaserCtrlServer) GetStatus(context.Context, *empty.Empty) (*laserctrlgrpc.Status, error) {
-	panic("implement me")
-}
-func (s LaserCtrlServer) ResetController(context.Context, *empty.Empty) (*laserctrlgrpc.EmptyResponse, error) {
-	panic("implement me")
+func (s *LaserCtrlServer) ResetController(ctx context.Context, req *empty.Empty) (*laserctrlgrpc.EmptyResponse, error) {
+	resp := laserctrlgrpc.EmptyResponse{}
+	ctx, _ = context.WithTimeout(ctx, time.Second)
+
+	_, err := s.deviceRequest(ctx, serial.SerialCommand{
+		Command: command.CommandReset,
+	})
+
+	if err != nil {
+		log.Errorf("Failed to reset: %s", err.Error())
+		return nil, err
+	}
+	return &resp, err
 }

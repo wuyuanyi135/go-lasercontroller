@@ -21,7 +21,6 @@ service LaserControlService {
     rpc CommitParameter(google.protobuf.Empty) returns (EmptyResponse) {}
 
     rpc ControlLaser(ControlLaserRequest) returns (EmptyResponse) {}
-    rpc GetStatus (google.protobuf.Empty) returns (Status) {}
 
     rpc ResetController(google.protobuf.Empty) returns (EmptyResponse) {}
 }
