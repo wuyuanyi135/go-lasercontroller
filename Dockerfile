@@ -4,6 +4,10 @@ RUN apk add --no-cache git protobuf-dev \
 && echo "export PATH=$PATH:$GOPATH/bin" >> /etc/profile
 
 WORKDIR /root
-COPY . .
-RUN go get github.com/wuyuanyi135/lasercontroller
-RUN cd $GOPATH/wuyuanyi135/lasercontroller && go generate
+RUN mkdir -p $GOPATH/src/github.com/wuyuanyi135/ &&
+git clone  https://github.com/wuyuanyi135/lasercontroller  $GOPATH/src/github.com/wuyuanyi135/lasercontroller&&
+cd $GOPATH/src/github.com/wuyuanyi135/lasercontroller &&
+go generate &&
+go build
+
+CMD '/bin/sh'
