@@ -177,6 +177,9 @@ func TestLaserCtrlServer_SetGetPower(t *testing.T) {
 	<-time.After(time.Second * 3)
 
 	_, err = client.Disconnect(context.Background(), &empty.Empty{})
+	if err != nil {
+		t.Fatal(err)
+	}
 }
 
 func TestLaserCtrlServer_CommitParameter(t *testing.T) {
@@ -247,4 +250,7 @@ func TestLaserCtrlServer_CommitParameter(t *testing.T) {
 	}
 
 	_, err = client.Disconnect(context.Background(), &empty.Empty{})
+	if err != nil {
+		t.Fatal(err)
+	}
 }

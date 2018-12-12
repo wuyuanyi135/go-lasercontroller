@@ -45,7 +45,7 @@ func NewSerial() Serial {
 		parity:   serial.NoParity,
 
 		responseWaitingList: responseWaitingList,
-		serialReceiveChan:   make(chan byte, ReceiveBufferSize),
+		serialReceiveChan:   nil,
 	}
 }
 func ListSerialPorts() (map[string]string, error) {
@@ -98,6 +98,7 @@ func (s *Serial) ConnectByPath(p string) error {
 		return errors.New(errMsg)
 	}
 	// start serial receive listener
+	s.serialReceiveChan = make(chan byte, ReceiveBufferSize)
 	go s.serialReceiver()
 	go s.responseHandler()
 
@@ -132,7 +133,12 @@ func (s *Serial) Disconnect() error {
 	}
 
 	err := s.instance.Close()
-	return err
+	if err != nil {
+		return err
+	} else {
+		s.instance = nil
+		return nil
+	}
 }
 
 func (s *Serial) WriteCommand(cmd SerialCommand) error {
