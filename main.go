@@ -5,7 +5,7 @@ import (
 	"github.com/wuyuanyi135/lasercontroller/server"
 )
 
-//go:generate -command protoc -I protos protos/*.proto --go_out=plugins=grpc:protos
+//go:generate sh -c "protoc -I protos protos/*.proto --go_out=plugins=grpc:protos"
 func main() {
 	fmt.Println("Starting server")
 	laserctrlgrpc.StartServer()
