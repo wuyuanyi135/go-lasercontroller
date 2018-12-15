@@ -9,6 +9,7 @@ git clone  https://github.com/wuyuanyi135/lasercontroller  $GOPATH/src/github.co
 cd $GOPATH/src/github.com/wuyuanyi135/lasercontroller &&\
 go generate &&\
 go get -d ./... &&\
-go build
+go build . &&\
+go install .
 
 CMD '/go/bin/lasercontroller'
