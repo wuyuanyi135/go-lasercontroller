@@ -155,6 +155,9 @@ func (s *Serial) WriteCommand(cmd SerialCommand) error {
 }
 
 func (s *Serial) RegisterResponse(cmd *SerialCommand) error {
+	if s.instance == nil {
+		return errors.New("serial is not opened")
+	}
 	if cmd.ResponseChannel == nil {
 		return errors.New("response channel is not initialized")
 	}
