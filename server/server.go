@@ -9,7 +9,7 @@ import (
 
 func StartServer() {
 	grpcServer := grpc.NewServer()
-	laserctrlgrpc.RegisterLaserControlServiceServer(grpcServer, &LaserCtrlServer{})
+	laserctrlgrpc.RegisterLaserControlServiceServer(grpcServer, New())
 	reflection.Register(grpcServer)
 	lis, err := net.Listen("tcp", ":3050")
 	if err != nil {
