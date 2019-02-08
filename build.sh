@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
-protoc -I protos protos/*.proto --go_out=plugins=grpc:protos
-
-go get ./...
+go generate 
+go get -d ./... 
+go build . 
+go install .

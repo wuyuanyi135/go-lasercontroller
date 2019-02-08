@@ -1,0 +1,3 @@
+[submodule "protos/MicroVision-proto"]
+	path = protos/MicroVision-proto
+	url = http://github.com/wuyuanyi135/MicroVision-proto

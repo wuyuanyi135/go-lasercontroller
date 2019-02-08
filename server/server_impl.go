@@ -5,7 +5,7 @@ import (
 	"encoding/binary"
 	"github.com/golang/protobuf/ptypes/empty"
 	"github.com/op/go-logging"
-	"github.com/wuyuanyi135/lasercontroller/protos"
+	"github.com/wuyuanyi135/lasercontroller/server/protogen"
 	"github.com/wuyuanyi135/lasercontroller/serial"
 	"github.com/wuyuanyi135/lasercontroller/serial/command"
 	"google.golang.org/grpc/codes"

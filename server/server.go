@@ -1,7 +1,7 @@
 package laserctrlgrpc
 
 import (
-	"github.com/wuyuanyi135/lasercontroller/protos"
+	"github.com/wuyuanyi135/lasercontroller/server/protogen"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
 	"net"
