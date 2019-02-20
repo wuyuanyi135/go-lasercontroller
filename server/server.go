@@ -9,7 +9,7 @@ import (
 
 func StartServer() {
 	grpcServer := grpc.NewServer()
-	mvcamctrl.RegisterLaserControlServiceServer(grpcServer, New())
+	mvcamctrl.RegisterMicroVisionCameraControlServiceServer(grpcServer, New())
 	reflection.Register(grpcServer)
 	lis, err := net.Listen("tcp", ":3050")
 	if err != nil {
