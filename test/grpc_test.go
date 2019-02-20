@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 	"github.com/golang/protobuf/ptypes/empty"
-	"github.com/wuyuanyi135/lasercontroller/protos"
+	"github.com/wuyuanyi135/mvcamctrl/protos"
 	"google.golang.org/grpc"
 	"testing"
 )

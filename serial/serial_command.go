@@ -2,7 +2,7 @@ package serial
 
 import (
 	"context"
-	"github.com/wuyuanyi135/lasercontroller/serial/command"
+	"github.com/wuyuanyi135/mvcamctrl/serial/command"
 )
 
 type SerialCommand struct {

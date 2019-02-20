@@ -1,8 +1,8 @@
 package test
 
 import (
-	"github.com/wuyuanyi135/lasercontroller/serial"
-	"github.com/wuyuanyi135/lasercontroller/serial/command"
+	"github.com/wuyuanyi135/mvcamctrl/serial"
+	"github.com/wuyuanyi135/mvcamctrl/serial/command"
 	"testing"
 )
 

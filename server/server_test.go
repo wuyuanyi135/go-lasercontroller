@@ -1,10 +1,10 @@
-package laserctrlgrpc
+package mvcamctrl
 
 import (
 	"context"
 	"fmt"
 	"github.com/golang/protobuf/ptypes/empty"
-	"github.com/wuyuanyi135/lasercontroller/server/protogen"
+	"github.com/wuyuanyi135/mvprotos/mvcamctrl"
 	"google.golang.org/grpc"
 	"net"
 	"testing"
@@ -13,7 +13,7 @@ import (
 
 func StartTestServer(ctx context.Context) {
 	grpcServer := grpc.NewServer()
-	laserctrlgrpc.RegisterLaserControlServiceServer(grpcServer, New())
+	mvcamctrl.RegisterLaserControlServiceServer(grpcServer, New())
 
 	lis, err := net.Listen("tcp", ":3050")
 	if err != nil {
@@ -34,7 +34,7 @@ func StartTestServer(ctx context.Context) {
 
 var conn *grpc.ClientConn
 
-func GetClient() (laserctrlgrpc.LaserControlServiceClient, error) {
+func GetClient() (mvcamctrl.LaserControlServiceClient, error) {
 	var err error
 	if conn == nil {
 		conn, err = grpc.Dial("localhost:3050", grpc.WithInsecure())
@@ -43,21 +43,21 @@ func GetClient() (laserctrlgrpc.LaserControlServiceClient, error) {
 		return nil, err
 	}
 
-	return laserctrlgrpc.NewLaserControlServiceClient(conn), nil
+	return mvcamctrl.NewLaserControlServiceClient(conn), nil
 }
-func ConnectDevice(client laserctrlgrpc.LaserControlServiceClient) error {
+func ConnectDevice(client mvcamctrl.LaserControlServiceClient) error {
 	serialDevices, err := client.GetSerialDevices(context.Background(), &empty.Empty{})
 	if err != nil {
 		return err
 	}
 	devList := serialDevices.DeviceList
-	var selectedDevice *laserctrlgrpc.SerialDeviceMapping
+	var selectedDevice *mvcamctrl.SerialDeviceMapping
 	if len(devList) >= 1 {
 		selectedDevice = devList[0]
 	}
 
-	_, err = client.Connect(context.Background(), &laserctrlgrpc.ConnectRequest{
-		DeviceIdentifier: &laserctrlgrpc.ConnectRequest_Path{Path: selectedDevice.Destination},
+	_, err = client.Connect(context.Background(), &mvcamctrl.ConnectRequest{
+		DeviceIdentifier: &mvcamctrl.ConnectRequest_Path{Path: selectedDevice.Destination},
 	})
 
 	if err != nil {
@@ -140,8 +140,8 @@ func TestLaserCtrlServer_SetGetPower(t *testing.T) {
 	}
 
 	// set power on
-	_, err = client.SetPower(context.Background(), &laserctrlgrpc.SetPowerRequest{
-		Power: &laserctrlgrpc.PowerConfiguration{MasterPower: true},
+	_, err = client.SetPower(context.Background(), &mvcamctrl.SetPowerRequest{
+		Power: &mvcamctrl.PowerConfiguration{MasterPower: true},
 	})
 	if err != nil {
 		t.Fatal(err)
@@ -159,8 +159,8 @@ func TestLaserCtrlServer_SetGetPower(t *testing.T) {
 	<-time.After(time.Second * 5)
 
 	// set power off
-	_, err = client.SetPower(context.Background(), &laserctrlgrpc.SetPowerRequest{
-		Power: &laserctrlgrpc.PowerConfiguration{MasterPower: false},
+	_, err = client.SetPower(context.Background(), &mvcamctrl.SetPowerRequest{
+		Power: &mvcamctrl.PowerConfiguration{MasterPower: false},
 	})
 	if err != nil {
 		t.Fatal(err)
@@ -201,7 +201,7 @@ func TestLaserCtrlServer_CommitParameter(t *testing.T) {
 
 	t.Logf("Default parameters: %v", defaultParameters)
 
-	modifiedParameters := laserctrlgrpc.LaserConfiguration{
+	modifiedParameters := mvcamctrl.LaserConfiguration{
 		PulseDelay:    10,
 		DigitalFilter: 2,
 		ExposureTick:  720,
@@ -209,7 +209,7 @@ func TestLaserCtrlServer_CommitParameter(t *testing.T) {
 
 	_, err = client.SetLaserParam(
 		context.Background(),
-		&laserctrlgrpc.SetLaserRequest{
+		&mvcamctrl.SetLaserRequest{
 			Laser: &modifiedParameters,
 		},
 	)
@@ -240,7 +240,7 @@ func TestLaserCtrlServer_CommitParameter(t *testing.T) {
 	// restore default
 	_, err = client.SetLaserParam(
 		context.Background(),
-		&laserctrlgrpc.SetLaserRequest{
+		&mvcamctrl.SetLaserRequest{
 			Laser: defaultParameters,
 		},
 	)

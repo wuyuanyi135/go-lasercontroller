@@ -1,7 +1,7 @@
-package laserctrlgrpc
+package mvcamctrl
 
 import (
-	"github.com/wuyuanyi135/lasercontroller/server/protogen"
+	"github.com/wuyuanyi135/mvprotos/mvcamctrl"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
 	"net"
@@ -9,7 +9,7 @@ import (
 
 func StartServer() {
 	grpcServer := grpc.NewServer()
-	laserctrlgrpc.RegisterLaserControlServiceServer(grpcServer, New())
+	mvcamctrl.RegisterLaserControlServiceServer(grpcServer, New())
 	reflection.Register(grpcServer)
 	lis, err := net.Listen("tcp", ":3050")
 	if err != nil {

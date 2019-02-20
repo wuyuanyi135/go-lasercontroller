@@ -1,13 +1,13 @@
-package laserctrlgrpc
+package mvcamctrl
 
 import (
 	"context"
 	"encoding/binary"
 	"github.com/golang/protobuf/ptypes/empty"
 	"github.com/op/go-logging"
-	"github.com/wuyuanyi135/lasercontroller/server/protogen"
-	"github.com/wuyuanyi135/lasercontroller/serial"
-	"github.com/wuyuanyi135/lasercontroller/serial/command"
+	"github.com/wuyuanyi135/mvcamctrl/serial"
+	"github.com/wuyuanyi135/mvcamctrl/serial/command"
+	"github.com/wuyuanyi135/mvprotos/mvcamctrl"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 	"time"
@@ -25,8 +25,8 @@ func New() *LaserCtrlServer {
 	return &LaserCtrlServer{serialInstance: serial.NewSerial()}
 }
 
-func (LaserCtrlServer) GetSerialDevices(context.Context, *empty.Empty) (*laserctrlgrpc.SerialListResponse, error) {
-	resp := laserctrlgrpc.SerialListResponse{}
+func (LaserCtrlServer) GetSerialDevices(context.Context, *empty.Empty) (*mvcamctrl.SerialListResponse, error) {
+	resp := mvcamctrl.SerialListResponse{}
 
 	devList, err := serial.ListSerialPorts()
 	if err != nil {
@@ -34,38 +34,38 @@ func (LaserCtrlServer) GetSerialDevices(context.Context, *empty.Empty) (*laserct
 	}
 
 	for name, destination := range devList {
-		resp.DeviceList = append(resp.DeviceList, &laserctrlgrpc.SerialDeviceMapping{Name: name, Destination: destination})
+		resp.DeviceList = append(resp.DeviceList, &mvcamctrl.SerialDeviceMapping{Name: name, Destination: destination})
 	}
 
 	return &resp, nil
 }
 
-func (LaserCtrlServer) GetDriverVersion(context.Context, *empty.Empty) (*laserctrlgrpc.DriverVersionResponse, error) {
-	resp := laserctrlgrpc.DriverVersionResponse{
+func (LaserCtrlServer) GetDriverVersion(context.Context, *empty.Empty) (*mvcamctrl.DriverVersionResponse, error) {
+	resp := mvcamctrl.DriverVersionResponse{
 		Version: DriverVersion,
 	}
 
 	return &resp, nil
 }
 
-func (s *LaserCtrlServer) Connect(ctx context.Context, request *laserctrlgrpc.ConnectRequest) (*laserctrlgrpc.EmptyResponse, error) {
+func (s *LaserCtrlServer) Connect(ctx context.Context, request *mvcamctrl.ConnectRequest) (*mvcamctrl.EmptyResponse, error) {
 	var err error
 	switch request.DeviceIdentifier.(type) {
-	case *laserctrlgrpc.ConnectRequest_Path:
+	case *mvcamctrl.ConnectRequest_Path:
 		err = s.serialInstance.ConnectByPath(request.GetPath())
-	case *laserctrlgrpc.ConnectRequest_Name:
+	case *mvcamctrl.ConnectRequest_Name:
 		err = s.serialInstance.ConnectByName(request.GetName())
 	}
 
-	var resp laserctrlgrpc.EmptyResponse
+	var resp mvcamctrl.EmptyResponse
 
 	return &resp, err
 }
 
-func (s *LaserCtrlServer) Disconnect(context.Context, *empty.Empty) (*laserctrlgrpc.EmptyResponse, error) {
+func (s *LaserCtrlServer) Disconnect(context.Context, *empty.Empty) (*mvcamctrl.EmptyResponse, error) {
 	err := s.serialInstance.Disconnect()
 
-	var resp laserctrlgrpc.EmptyResponse
+	var resp mvcamctrl.EmptyResponse
 	return &resp, err
 }
 
@@ -91,8 +91,8 @@ func (s *LaserCtrlServer) deviceRequest(ctx context.Context, command serial.Seri
 	}
 }
 
-func (s *LaserCtrlServer) GetDeviceVersion(ctx context.Context, req *empty.Empty) (*laserctrlgrpc.DeviceVersionResponse, error) {
-	var resp = laserctrlgrpc.DeviceVersionResponse{}
+func (s *LaserCtrlServer) GetDeviceVersion(ctx context.Context, req *empty.Empty) (*mvcamctrl.DeviceVersionResponse, error) {
+	var resp = mvcamctrl.DeviceVersionResponse{}
 	ctx, _ = context.WithTimeout(ctx, time.Second)
 	version, err := s.deviceRequest(
 		ctx,
@@ -112,8 +112,8 @@ func (s *LaserCtrlServer) GetDeviceVersion(ctx context.Context, req *empty.Empty
 	return &resp, nil
 }
 
-func (s *LaserCtrlServer) SetPower(ctx context.Context, req *laserctrlgrpc.SetPowerRequest) (*laserctrlgrpc.EmptyResponse, error) {
-	resp := laserctrlgrpc.EmptyResponse{}
+func (s *LaserCtrlServer) SetPower(ctx context.Context, req *mvcamctrl.SetPowerRequest) (*mvcamctrl.EmptyResponse, error) {
+	resp := mvcamctrl.EmptyResponse{}
 
 	ctx, _ = context.WithTimeout(ctx, time.Second)
 	var power byte = 0
@@ -134,8 +134,8 @@ func (s *LaserCtrlServer) SetPower(ctx context.Context, req *laserctrlgrpc.SetPo
 	return &resp, nil
 }
 
-func (s *LaserCtrlServer) GetPower(ctx context.Context, req *empty.Empty) (*laserctrlgrpc.PowerConfiguration, error) {
-	resp := laserctrlgrpc.PowerConfiguration{}
+func (s *LaserCtrlServer) GetPower(ctx context.Context, req *empty.Empty) (*mvcamctrl.PowerConfiguration, error) {
+	resp := mvcamctrl.PowerConfiguration{}
 
 	ctx, _ = context.WithTimeout(ctx, time.Second)
 	power, err := s.deviceRequest(ctx, serial.SerialCommand{
@@ -150,8 +150,8 @@ func (s *LaserCtrlServer) GetPower(ctx context.Context, req *empty.Empty) (*lase
 	return &resp, nil
 }
 
-func (s *LaserCtrlServer) SetLaserParam(ctx context.Context, req *laserctrlgrpc.SetLaserRequest) (*laserctrlgrpc.EmptyResponse, error) {
-	resp := laserctrlgrpc.EmptyResponse{}
+func (s *LaserCtrlServer) SetLaserParam(ctx context.Context, req *mvcamctrl.SetLaserRequest) (*mvcamctrl.EmptyResponse, error) {
+	resp := mvcamctrl.EmptyResponse{}
 	ctx, _ = context.WithTimeout(ctx, time.Second)
 
 	config := req.Laser
@@ -201,8 +201,8 @@ func (s *LaserCtrlServer) SetLaserParam(ctx context.Context, req *laserctrlgrpc.
 	return &resp, nil
 }
 
-func (s *LaserCtrlServer) GetLaserParam(ctx context.Context, req *empty.Empty) (*laserctrlgrpc.LaserConfiguration, error) {
-	resp := laserctrlgrpc.LaserConfiguration{}
+func (s *LaserCtrlServer) GetLaserParam(ctx context.Context, req *empty.Empty) (*mvcamctrl.LaserConfiguration, error) {
+	resp := mvcamctrl.LaserConfiguration{}
 	ctx, _ = context.WithTimeout(ctx, time.Second)
 	// exposure
 	b := make([]byte, command.CommandGetExposure.ResponseLength)
@@ -258,8 +258,8 @@ func (s *LaserCtrlServer) GetLaserParam(ctx context.Context, req *empty.Empty) (
 	return &resp, nil
 }
 
-func (s *LaserCtrlServer) CommitParameter(ctx context.Context, req *empty.Empty) (*laserctrlgrpc.EmptyResponse, error) {
-	resp := laserctrlgrpc.EmptyResponse{}
+func (s *LaserCtrlServer) CommitParameter(ctx context.Context, req *empty.Empty) (*mvcamctrl.EmptyResponse, error) {
+	resp := mvcamctrl.EmptyResponse{}
 	ctx, _ = context.WithTimeout(ctx, time.Second)
 
 	_, err := s.deviceRequest(ctx, serial.SerialCommand{
@@ -273,8 +273,8 @@ func (s *LaserCtrlServer) CommitParameter(ctx context.Context, req *empty.Empty)
 	return &resp, err
 }
 
-func (s *LaserCtrlServer) ControlLaser(ctx context.Context, req *laserctrlgrpc.ControlLaserRequest) (*laserctrlgrpc.EmptyResponse, error) {
-	resp := laserctrlgrpc.EmptyResponse{}
+func (s *LaserCtrlServer) ControlLaser(ctx context.Context, req *mvcamctrl.ControlLaserRequest) (*mvcamctrl.EmptyResponse, error) {
+	resp := mvcamctrl.EmptyResponse{}
 	ctx, _ = context.WithTimeout(ctx, time.Second)
 
 	var cmd command.CommandMeta
@@ -294,8 +294,8 @@ func (s *LaserCtrlServer) ControlLaser(ctx context.Context, req *laserctrlgrpc.C
 	return &resp, err
 }
 
-func (s *LaserCtrlServer) ResetController(ctx context.Context, req *empty.Empty) (*laserctrlgrpc.EmptyResponse, error) {
-	resp := laserctrlgrpc.EmptyResponse{}
+func (s *LaserCtrlServer) ResetController(ctx context.Context, req *empty.Empty) (*mvcamctrl.EmptyResponse, error) {
+	resp := mvcamctrl.EmptyResponse{}
 	ctx, _ = context.WithTimeout(ctx, time.Second)
 
 	_, err := s.deviceRequest(ctx, serial.SerialCommand{

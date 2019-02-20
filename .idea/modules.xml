@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/lasercontroller.iml" filepath="$PROJECT_DIR$/.idea/lasercontroller.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../mvcamctrl/.idea/mvcamctrl.iml" filepath="$PROJECT_DIR$/../mvcamctrl/.idea/mvcamctrl.iml" />
     </modules>
   </component>
 </project>
