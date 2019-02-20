@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/../mvcamctrl/serial/serial.go" line="29" />
+    <bookmark url="file://$PROJECT_DIR$/serial/serial.go" line="29" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="69a652a3-f1b1-4e70-b560-4055bc8bea6c" name="Default Changelist" comment="" />
@@ -31,7 +31,7 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../mvcamctrl/server/server_impl.go">
+        <entry file="file://$PROJECT_DIR$/server/server_impl.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-960">
               <caret line="27" column="77" selection-start-line="27" selection-start-column="77" selection-end-line="27" selection-end-column="77" />
@@ -43,7 +43,7 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../mvcamctrl/main.go">
+        <entry file="file://$PROJECT_DIR$/main.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="135">
               <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
@@ -55,28 +55,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/../mvcamctrl/Dockerfile">
+        <entry file="file://$PROJECT_DIR$/Dockerfile.amd64">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+            <state relative-caret-position="90">
+              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../mvcamctrl/build.sh">
+        <entry file="file://$PROJECT_DIR$/Dockerfile.arm64">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" selection-start-line="4" selection-end-line="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../mvcamctrl/build_docker.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="37" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
+            <state relative-caret-position="210">
+              <caret line="14" column="22" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -156,22 +147,25 @@
         <option value="$PROJECT_DIR$/Dockerfile" />
         <option value="$PROJECT_DIR$/start_docker.sh" />
         <option value="$PROJECT_DIR$/server/server.go" />
-        <option value="$PROJECT_DIR$/../mvcamctrl/protoc.sh" />
-        <option value="$PROJECT_DIR$/../mvcamctrl/protos/MicroVision-proto/mvcamctrl/laser_control_definitions.proto" />
-        <option value="$PROJECT_DIR$/../mvcamctrl/protos/MicroVision-proto/mvcamctrl/laser_control_service.proto" />
-        <option value="$PROJECT_DIR$/../mvcamctrl/protos/MicroVision-proto/mvcgi/cgi_definitions.proto" />
-        <option value="$PROJECT_DIR$/../mvcamctrl/protos/MicroVision-proto/mvcgi/cgi_service.proto" />
-        <option value="$PROJECT_DIR$/../mvcamctrl/protos/MicroVision-proto/mvcam/camera_definitions.proto" />
-        <option value="$PROJECT_DIR$/../mvcamctrl/protos/MicroVision-proto/mvcam/camera_service.proto" />
-        <option value="$PROJECT_DIR$/../mvcamctrl/protos/MicroVision-proto/protoc.sh" />
-        <option value="$PROJECT_DIR$/../mvcamctrl/build.sh" />
-        <option value="$PROJECT_DIR$/../mvcamctrl/build_docker.sh" />
-        <option value="$PROJECT_DIR$/../mvcamctrl/server/server.go" />
-        <option value="$PROJECT_DIR$/../mvcamctrl/server/server_test.go" />
-        <option value="$PROJECT_DIR$/../mvcamctrl/server/server_impl.go" />
-        <option value="$PROJECT_DIR$/../mvcamctrl/main.go" />
-        <option value="$PROJECT_DIR$/../mvcamctrl/start_docker.sh" />
-        <option value="$PROJECT_DIR$/../mvcamctrl/Dockerfile" />
+        <option value="$PROJECT_DIR$/protoc.sh" />
+        <option value="$PROJECT_DIR$/protos/MicroVision-proto/mvcamctrl/laser_control_definitions.proto" />
+        <option value="$PROJECT_DIR$/protos/MicroVision-proto/mvcamctrl/laser_control_service.proto" />
+        <option value="$PROJECT_DIR$/protos/MicroVision-proto/mvcgi/cgi_definitions.proto" />
+        <option value="$PROJECT_DIR$/protos/MicroVision-proto/mvcgi/cgi_service.proto" />
+        <option value="$PROJECT_DIR$/protos/MicroVision-proto/mvcam/camera_definitions.proto" />
+        <option value="$PROJECT_DIR$/protos/MicroVision-proto/mvcam/camera_service.proto" />
+        <option value="$PROJECT_DIR$/protos/MicroVision-proto/protoc.sh" />
+        <option value="$PROJECT_DIR$/build.sh" />
+        <option value="$PROJECT_DIR$/server/server.go" />
+        <option value="$PROJECT_DIR$/server/server_test.go" />
+        <option value="$PROJECT_DIR$/server/server_impl.go" />
+        <option value="$PROJECT_DIR$/main.go" />
+        <option value="$PROJECT_DIR$/start_docker.sh" />
+        <option value="$PROJECT_DIR$/Dockerfile" />
+        <option value="$PROJECT_DIR$/Dockerfile.cross" />
+        <option value="$PROJECT_DIR$/build_docker.sh" />
+        <option value="$PROJECT_DIR$/Dockerfile.arm64" />
+        <option value="$PROJECT_DIR$/Dockerfile.amd64" />
       </list>
     </option>
   </component>
@@ -198,12 +192,6 @@
               <item name="mvcamctrl" type="b2602c69:ProjectViewProjectNode" />
               <item name="mvcamctrl" type="462c0819:PsiDirectoryNode" />
               <item name="protos" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mvcamctrl" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mvcamctrl" type="462c0819:PsiDirectoryNode" />
-              <item name="protos" type="462c0819:PsiDirectoryNode" />
-              <item name="MicroVision-proto" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="mvcamctrl" type="b2602c69:ProjectViewProjectNode" />
@@ -244,7 +232,7 @@
       <recent name="$PROJECT_DIR$/server" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/../mvcamctrl/protos/MicroVision-proto" />
+      <recent name="$PROJECT_DIR$/protos/MicroVision-proto" />
       <recent name="$PROJECT_DIR$/protos" />
     </key>
   </component>
@@ -273,9 +261,9 @@
     </configuration>
     <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="mvcamctrl" />
-      <working_directory value="$PROJECT_DIR$/../mvcamctrl" />
+      <working_directory value="$PROJECT_DIR$" />
       <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/../mvcamctrl/main.go" />
+      <filePath value="$PROJECT_DIR$/main.go" />
       <package value="github.com/wuyuanyi135/laser-controller" />
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
@@ -331,6 +319,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="27" width="1853" height="1053" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.66450566" visible="true" weight="0.19701162" />
       <window_info id="Favorites" order="1" sideWeight="0.5024311" side_tool="true" weight="0.2733813" />
@@ -343,8 +332,8 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49197567" visible="true" weight="0.32752994" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50802433" side_tool="true" visible="true" weight="0.32752994" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49197567" visible="true" weight="0.32752994" />
+      <window_info active="true" anchor="bottom" id="Event Log" order="10" sideWeight="0.50802433" side_tool="true" visible="true" weight="0.32752994" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.4997233" weight="0.3293348" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -378,17 +367,17 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/../mvcamctrl/test/serial_test.go</url>
+          <url>file://$PROJECT_DIR$/test/serial_test.go</url>
           <line>9</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/../mvcamctrl/server/server_test.go</url>
+          <url>file://$PROJECT_DIR$/server/server_test.go</url>
           <line>121</line>
           <option name="timeStamp" value="53" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/../mvcamctrl/serial/serial.go</url>
+          <url>file://$PROJECT_DIR$/serial/serial.go</url>
           <line>220</line>
           <option name="timeStamp" value="54" />
         </line-breakpoint>
@@ -448,7 +437,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/serial_util_test.go" />
-    <entry file="file://$PROJECT_DIR$/../mvcamctrl/test/concept_cancel_test.go">
+    <entry file="file://$PROJECT_DIR$/test/concept_cancel_test.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
           <caret line="39" column="16" selection-start-line="39" selection-start-column="16" selection-end-line="39" selection-end-column="16" />
@@ -463,7 +452,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/protos/error.proto" />
-    <entry file="file://$PROJECT_DIR$/../mvcamctrl/test/grpc_test.go">
+    <entry file="file://$PROJECT_DIR$/test/grpc_test.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" selection-start-line="10" selection-end-line="10" />
@@ -522,7 +511,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../mvcamctrl/test/serial_test.go">
+    <entry file="file://$PROJECT_DIR$/test/serial_test.go">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="12" lean-forward="true" selection-start-column="12" selection-end-column="12" />
@@ -536,14 +525,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../mvcamctrl/serial/serial_command.go">
+    <entry file="file://$PROJECT_DIR$/serial/serial_command.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../mvcamctrl/serial/command/laser_controller.go">
+    <entry file="file://$PROJECT_DIR$/serial/command/laser_controller.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="290">
           <caret line="32" column="4" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="4" />
@@ -552,7 +541,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/protos/laser_control_definitions.proto" />
     <entry file="file://$PROJECT_DIR$/protos/laser_control_service.proto" />
-    <entry file="file://$PROJECT_DIR$/../mvcamctrl/.gitignore">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="7" selection-start-column="7" selection-end-column="7" />
@@ -589,77 +578,77 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../mvcamctrl/serial/serial_util_export_test.go">
+    <entry file="file://$PROJECT_DIR$/serial/serial_util_export_test.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="533">
           <caret line="66" selection-start-line="66" selection-end-line="66" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../mvcamctrl/serial/serial.go">
+    <entry file="file://$PROJECT_DIR$/serial/serial.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="36" column="14" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../mvcamctrl/protos/MicroVision-proto/mvcam/camera_service.proto">
+    <entry file="file://$PROJECT_DIR$/protos/MicroVision-proto/mvcam/camera_service.proto">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../mvcamctrl/protos/MicroVision-proto/mvcam/camera_definitions.proto">
+    <entry file="file://$PROJECT_DIR$/protos/MicroVision-proto/mvcam/camera_definitions.proto">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="53" lean-forward="true" selection-start-line="3" selection-end-line="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../mvcamctrl/protos/MicroVision-proto/mvcgi/cgi_service.proto">
+    <entry file="file://$PROJECT_DIR$/protos/MicroVision-proto/mvcgi/cgi_service.proto">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../mvcamctrl/protos/MicroVision-proto/mvcgi/cgi_definitions.proto">
+    <entry file="file://$PROJECT_DIR$/protos/MicroVision-proto/mvcgi/cgi_definitions.proto">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="57" selection-start-line="2" selection-end-line="3" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../mvcamctrl/protos/MicroVision-proto/mvcamctrl/laser_control_service.proto">
+    <entry file="file://$PROJECT_DIR$/protos/MicroVision-proto/mvcamctrl/laser_control_service.proto">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../mvcamctrl/protos/MicroVision-proto/mvcamctrl/laser_control_definitions.proto">
+    <entry file="file://$PROJECT_DIR$/protos/MicroVision-proto/mvcamctrl/laser_control_definitions.proto">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="60" lean-forward="true" selection-start-line="2" selection-end-line="3" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../mvcamctrl/protos/MicroVision-proto/protoc.sh">
+    <entry file="file://$PROJECT_DIR$/protos/MicroVision-proto/protoc.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="33" lean-forward="true" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../mvcamctrl/protoc.sh">
+    <entry file="file://$PROJECT_DIR$/protoc.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="80" lean-forward="true" selection-start-line="4" selection-start-column="80" selection-end-line="4" selection-end-column="80" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../mvcamctrl/server/server_test.go">
+    <entry file="file://$PROJECT_DIR$/server/server_test.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-82">
           <caret column="13" lean-forward="true" selection-start-column="13" selection-end-column="13" />
@@ -669,14 +658,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../mvcamctrl/start_docker.sh">
+    <entry file="file://$PROJECT_DIR$/start_docker.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="77" selection-start-line="2" selection-start-column="77" selection-end-line="2" selection-end-column="77" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../mvcamctrl/server/server.go">
+    <entry file="file://$PROJECT_DIR$/server/server.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" column="12" lean-forward="true" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
@@ -686,10 +675,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../mvcamctrl/Dockerfile.cross">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../mvcamctrl/server/server_impl.go">
+    <entry file="file://$PROJECT_DIR$/server/server_impl.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-960">
           <caret line="27" column="77" selection-start-line="27" selection-start-column="77" selection-end-line="27" selection-end-column="77" />
@@ -699,7 +685,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../mvcamctrl/main.go">
+    <entry file="file://$PROJECT_DIR$/main.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
@@ -709,24 +695,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../mvcamctrl/build_docker.sh">
+    <entry file="file://$PROJECT_DIR$/build_docker.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="37" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
+        <state relative-caret-position="45">
+          <caret line="3" column="37" lean-forward="true" selection-start-line="3" selection-start-column="37" selection-end-line="3" selection-end-column="37" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../mvcamctrl/build.sh">
+    <entry file="file://$PROJECT_DIR$/build.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../mvcamctrl/Dockerfile">
+    <entry file="file://$PROJECT_DIR$/Dockerfile.arm64">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        <state relative-caret-position="210">
+          <caret line="14" column="22" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dockerfile.amd64">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
