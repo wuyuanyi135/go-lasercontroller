@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="69a652a3-f1b1-4e70-b560-4055bc8bea6c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/push_docker.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build_docker.sh" beforeDir="false" afterPath="$PROJECT_DIR$/build_docker.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/protos/MicroVision-proto" beforeDir="false" afterPath="$PROJECT_DIR$/protos/MicroVision-proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,50 +35,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/server_impl.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-435">
-              <caret line="39" column="21" lean-forward="true" selection-start-line="39" selection-start-column="21" selection-end-line="39" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/server/server.go">
+        <entry file="file://$PROJECT_DIR$/build_docker.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="11" column="60" selection-start-line="11" selection-start-column="60" selection-end-line="11" selection-end-column="60" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
-              <folding>
-                <element signature="e#14#74#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Dockerfile.amd64">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Dockerfile.arm64">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="22" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="22" />
+            <state relative-caret-position="45">
+              <caret line="3" column="76" selection-start-line="3" selection-start-column="76" selection-end-line="3" selection-end-column="76" />
             </state>
           </provider>
         </entry>
@@ -129,7 +91,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/protos/laser-control-service.proto" />
-        <option value="$PROJECT_DIR$/build_docker.sh" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/server_impl.go" />
         <option value="$PROJECT_DIR$/build.sh" />
@@ -172,11 +133,14 @@
         <option value="$PROJECT_DIR$/start_docker.sh" />
         <option value="$PROJECT_DIR$/Dockerfile" />
         <option value="$PROJECT_DIR$/Dockerfile.cross" />
-        <option value="$PROJECT_DIR$/build_docker.sh" />
         <option value="$PROJECT_DIR$/Dockerfile.arm64" />
         <option value="$PROJECT_DIR$/Dockerfile.amd64" />
         <option value="$PROJECT_DIR$/server/server.go" />
         <option value="$PROJECT_DIR$/server/server.go" />
+        <option value="$PROJECT_DIR$/push_docker.sh" />
+        <option value="$PROJECT_DIR$/protos/MicroVision-proto/mvcamctrl/camera_control_service.proto" />
+        <option value="$PROJECT_DIR$/build_docker.sh" />
+        <option value="$PROJECT_DIR$/build_docker.sh" />
       </list>
     </option>
   </component>
@@ -209,6 +173,13 @@
               <item name="mvcamctrl" type="462c0819:PsiDirectoryNode" />
               <item name="protos" type="462c0819:PsiDirectoryNode" />
               <item name="MicroVision-proto" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mvcamctrl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mvcamctrl" type="462c0819:PsiDirectoryNode" />
+              <item name="protos" type="462c0819:PsiDirectoryNode" />
+              <item name="MicroVision-proto" type="462c0819:PsiDirectoryNode" />
+              <item name="mvcamctrl" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="mvcamctrl" type="b2602c69:ProjectViewProjectNode" />
@@ -348,21 +319,20 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="27" width="1853" height="1053" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.66450566" visible="true" weight="0.20143884" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.66450566" visible="true" weight="0.20365246" />
       <window_info id="Favorites" order="1" sideWeight="0.5024311" side_tool="true" weight="0.2733813" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4831212" visible="true" weight="0.32715377" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4997233" weight="0.3293348" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4831212" weight="0.32715377" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49031544" weight="0.3991276" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4997233" weight="0.3293348" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49031544" weight="0.32715377" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5168788" side_tool="true" visible="true" weight="0.32715377" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.48920864" visible="true" weight="0.32715377" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.51079136" side_tool="true" visible="true" weight="0.32715377" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.4997233" weight="0.3293348" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -391,7 +361,9 @@
     <MESSAGE value="container should auto remove" />
     <MESSAGE value="the server does not properly initialize the object" />
     <MESSAGE value="update start app" />
-    <option name="LAST_COMMIT_MESSAGE" value="update start app" />
+    <MESSAGE value="update service name" />
+    <MESSAGE value="rename file" />
+    <option name="LAST_COMMIT_MESSAGE" value="rename file" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -429,13 +401,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file:///usr/lib/go-1.11/src/builtin/builtin.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
-          <caret line="254" column="5" selection-start-line="254" selection-start-column="5" selection-end-line="254" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/error_handler.go" />
     <entry file="file://$PROJECT_DIR$/protos/error.pb.go" />
     <entry file="file:///usr/lib/go-1.11/src/sync/rwmutex.go">
@@ -650,14 +615,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protos/MicroVision-proto/mvcamctrl/laser_control_service.proto">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protos/MicroVision-proto/mvcamctrl/laser_control_definitions.proto">
+    <entry file="file://$PROJECT_DIR$/protos/MicroVision-proto/mvcamctrl/camera_controller_definitions.proto">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="60" lean-forward="true" selection-start-line="2" selection-end-line="3" />
@@ -682,31 +640,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/start_docker.sh">
+    <entry file="file://$PROJECT_DIR$/main.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="77" selection-start-line="2" selection-start-column="77" selection-end-line="2" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build_docker.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="37" lean-forward="true" selection-start-line="3" selection-start-column="37" selection-end-line="3" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Dockerfile.arm64">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="22" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="22" />
+        <state relative-caret-position="90">
+          <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
+          <folding>
+            <element signature="e#14#74#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -717,27 +657,59 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.go">
+    <entry file="file://$PROJECT_DIR$/Dockerfile.arm64">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
-          <folding>
-            <element signature="e#14#74#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="210">
+          <caret line="14" column="22" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/server_impl.go">
+    <entry file="file://$PROJECT_DIR$/build.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-435">
-          <caret line="39" column="21" lean-forward="true" selection-start-line="39" selection-start-column="21" selection-end-line="39" selection-end-column="21" />
+        <state relative-caret-position="60">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/push_docker.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="48" selection-start-line="2" selection-start-column="48" selection-end-line="2" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protos/MicroVision-proto/mvcamctrl/camera_controller_service.proto">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="1" lean-forward="true" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/server.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="11" column="60" selection-start-line="11" selection-start-column="60" selection-end-line="11" selection-end-column="60" />
+        <state relative-caret-position="270">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/server_impl.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="39" column="21" selection-start-line="39" selection-start-column="21" selection-end-line="39" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/start_docker.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="77" selection-start-line="2" selection-start-column="77" selection-end-line="2" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build_docker.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="76" selection-start-line="3" selection-start-column="76" selection-end-line="3" selection-end-column="76" />
         </state>
       </provider>
     </entry>
