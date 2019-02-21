@@ -18,14 +18,15 @@ const DriverVersion = "1.0"
 var log = logging.MustGetLogger("Server")
 
 type LaserCtrlServer struct {
-	serialInstance serial.Serial
+	serialInstance   serial.Serial
+	openedSerialPort string
 }
 
 func New() *LaserCtrlServer {
 	return &LaserCtrlServer{serialInstance: serial.NewSerial()}
 }
 
-func (LaserCtrlServer) GetSerialDevices(context.Context, *empty.Empty) (*mvcamctrl.SerialListResponse, error) {
+func (s *LaserCtrlServer) GetSerialDevices(context.Context, *empty.Empty) (*mvcamctrl.SerialListResponse, error) {
 	resp := mvcamctrl.SerialListResponse{}
 
 	devList, err := serial.ListSerialPorts()
@@ -34,7 +35,15 @@ func (LaserCtrlServer) GetSerialDevices(context.Context, *empty.Empty) (*mvcamct
 	}
 
 	for name, destination := range devList {
-		resp.DeviceList = append(resp.DeviceList, &mvcamctrl.SerialDeviceMapping{Name: name, Destination: destination})
+		opened := false
+		if s.openedSerialPort != "" && s.openedSerialPort == destination {
+			opened = true
+		}
+		resp.DeviceList = append(resp.DeviceList, &mvcamctrl.SerialDeviceMapping{
+			Name:        name,
+			Destination: destination,
+			Connected:   opened,
+		})
 	}
 
 	return &resp, nil

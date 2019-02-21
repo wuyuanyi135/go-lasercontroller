@@ -48,6 +48,8 @@ func NewSerial() Serial {
 		serialReceiveChan:   nil,
 	}
 }
+
+// return map[path in /dev/serial/by-id]=path in /dev
 func ListSerialPorts() (map[string]string, error) {
 	dirPath := DirPath
 	infos, e := ioutil.ReadDir(dirPath)
