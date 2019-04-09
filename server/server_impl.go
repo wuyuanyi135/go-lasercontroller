@@ -26,7 +26,7 @@ func New() *LaserCtrlServer {
 	return &LaserCtrlServer{serialInstance: serial.NewSerial()}
 }
 
-func (s *LaserCtrlServer) GetSerialDevices(context.Context, *empty.Empty) (*mvcamctrl.SerialListResponse, error) {
+func (s *LaserCtrlServer) GetSerialDevices(context.Context, *mvcamctrl.GetSerialDevicesRequest) (*mvcamctrl.SerialListResponse, error) {
 	resp := mvcamctrl.SerialListResponse{}
 
 	devList, err := serial.ListSerialPorts()
@@ -57,7 +57,7 @@ func (LaserCtrlServer) GetDriverVersion(context.Context, *empty.Empty) (*mvcamct
 	return &resp, nil
 }
 
-func (s *LaserCtrlServer) Connect(ctx context.Context, request *mvcamctrl.ConnectRequest) (*mvcamctrl.EmptyResponse, error) {
+func (s *LaserCtrlServer) Connect(ctx context.Context, request *mvcamctrl.ConnectRequest) (*empty.Empty, error) {
 	var err error
 	switch request.DeviceIdentifier.(type) {
 	case *mvcamctrl.ConnectRequest_Path:
@@ -66,15 +66,15 @@ func (s *LaserCtrlServer) Connect(ctx context.Context, request *mvcamctrl.Connec
 		err = s.serialInstance.ConnectByName(request.GetName())
 	}
 
-	var resp mvcamctrl.EmptyResponse
+	var resp empty.Empty
 
 	return &resp, err
 }
 
-func (s *LaserCtrlServer) Disconnect(context.Context, *empty.Empty) (*mvcamctrl.EmptyResponse, error) {
+func (s *LaserCtrlServer) Disconnect(ctx context.Context, req *mvcamctrl.ConnectRequest) (*empty.Empty, error) {
 	err := s.serialInstance.Disconnect()
 
-	var resp mvcamctrl.EmptyResponse
+	var resp empty.Empty
 	return &resp, err
 }
 
@@ -121,8 +121,8 @@ func (s *LaserCtrlServer) GetDeviceVersion(ctx context.Context, req *empty.Empty
 	return &resp, nil
 }
 
-func (s *LaserCtrlServer) SetPower(ctx context.Context, req *mvcamctrl.SetPowerRequest) (*mvcamctrl.EmptyResponse, error) {
-	resp := mvcamctrl.EmptyResponse{}
+func (s *LaserCtrlServer) SetPower(ctx context.Context, req *mvcamctrl.SetPowerRequest) (*empty.Empty, error) {
+	resp := empty.Empty{}
 
 	ctx, _ = context.WithTimeout(ctx, time.Second)
 	var power byte = 0
@@ -159,8 +159,8 @@ func (s *LaserCtrlServer) GetPower(ctx context.Context, req *empty.Empty) (*mvca
 	return &resp, nil
 }
 
-func (s *LaserCtrlServer) SetLaserParam(ctx context.Context, req *mvcamctrl.SetLaserRequest) (*mvcamctrl.EmptyResponse, error) {
-	resp := mvcamctrl.EmptyResponse{}
+func (s *LaserCtrlServer) SetLaserParam(ctx context.Context, req *mvcamctrl.SetLaserRequest) (*empty.Empty, error) {
+	resp := empty.Empty{}
 	ctx, _ = context.WithTimeout(ctx, time.Second)
 
 	config := req.Laser
@@ -267,8 +267,8 @@ func (s *LaserCtrlServer) GetLaserParam(ctx context.Context, req *empty.Empty) (
 	return &resp, nil
 }
 
-func (s *LaserCtrlServer) CommitParameter(ctx context.Context, req *empty.Empty) (*mvcamctrl.EmptyResponse, error) {
-	resp := mvcamctrl.EmptyResponse{}
+func (s *LaserCtrlServer) CommitParameter(ctx context.Context, req *empty.Empty) (*empty.Empty, error) {
+	resp := empty.Empty{}
 	ctx, _ = context.WithTimeout(ctx, time.Second)
 
 	_, err := s.deviceRequest(ctx, serial.SerialCommand{
@@ -282,8 +282,8 @@ func (s *LaserCtrlServer) CommitParameter(ctx context.Context, req *empty.Empty)
 	return &resp, err
 }
 
-func (s *LaserCtrlServer) ControlLaser(ctx context.Context, req *mvcamctrl.ControlLaserRequest) (*mvcamctrl.EmptyResponse, error) {
-	resp := mvcamctrl.EmptyResponse{}
+func (s *LaserCtrlServer) ControlLaser(ctx context.Context, req *mvcamctrl.ControlLaserRequest) (*empty.Empty, error) {
+	resp := empty.Empty{}
 	ctx, _ = context.WithTimeout(ctx, time.Second)
 
 	var cmd command.CommandMeta
@@ -303,8 +303,8 @@ func (s *LaserCtrlServer) ControlLaser(ctx context.Context, req *mvcamctrl.Contr
 	return &resp, err
 }
 
-func (s *LaserCtrlServer) ResetController(ctx context.Context, req *empty.Empty) (*mvcamctrl.EmptyResponse, error) {
-	resp := mvcamctrl.EmptyResponse{}
+func (s *LaserCtrlServer) ResetController(ctx context.Context, req *empty.Empty) (*empty.Empty, error) {
+	resp := empty.Empty{}
 	ctx, _ = context.WithTimeout(ctx, time.Second)
 
 	_, err := s.deviceRequest(ctx, serial.SerialCommand{

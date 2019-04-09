@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="69a652a3-f1b1-4e70-b560-4055bc8bea6c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/protos/MicroVision-proto/mvcamctrl/camera_controller_definitions.proto" beforeDir="false" afterPath="$PROJECT_DIR$/protos/MicroVision-proto/mvcamctrl/camera_controller_definitions.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serial/serial.go" beforeDir="false" afterPath="$PROJECT_DIR$/serial/serial.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/protos/MicroVision-proto" beforeDir="false" afterPath="$PROJECT_DIR$/protos/MicroVision-proto" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/server_impl.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/server_impl.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,11 +34,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server/server_impl.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="31" column="38" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
+            <state relative-caret-position="279">
+              <caret line="74" column="40" lean-forward="true" selection-start-line="74" selection-start-column="40" selection-end-line="74" selection-end-column="40" />
+              <folding>
+                <element signature="e#19#342#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -66,7 +68,7 @@
         <entry file="file://$PROJECT_DIR$/protos/MicroVision-proto/mvcamctrl/camera_controller_service.proto">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="442">
-              <caret line="26" column="1" lean-forward="true" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
+              <caret line="26" column="1" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -74,17 +76,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/protos/MicroVision-proto/mvcamctrl/camera_controller_definitions.proto">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
+            <state relative-caret-position="136">
+              <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/serial/serial.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="51" column="53" selection-start-line="51" selection-start-column="53" selection-end-line="51" selection-end-column="53" />
+            <state relative-caret-position="358">
+              <caret line="59" selection-start-line="59" selection-end-line="59" />
             </state>
           </provider>
         </entry>
@@ -127,7 +129,7 @@
       <replace>mvcamctrl</replace>
     </replaceStrings>
   </component>
-  <component name="GOROOT" path="/usr/lib/go-1.11" />
+  <component name="GOROOT" path="/usr/lib/go-1.12" />
   <component name="Git.Settings">
     <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -183,9 +185,9 @@
         <option value="$PROJECT_DIR$/build_docker.sh" />
         <option value="$PROJECT_DIR$/build_docker.sh" />
         <option value="$PROJECT_DIR$/protos/MicroVision-proto/mvcamctrl/camera_controller_definitions.proto" />
-        <option value="$PROJECT_DIR$/server/server_impl.go" />
-        <option value="$PROJECT_DIR$/server/server_impl.go" />
         <option value="$PROJECT_DIR$/serial/serial.go" />
+        <option value="$PROJECT_DIR$/server/server_impl.go" />
+        <option value="$PROJECT_DIR$/server/server_impl.go" />
       </list>
     </option>
   </component>
@@ -225,7 +227,21 @@
               <item name="mvcamctrl" type="462c0819:PsiDirectoryNode" />
               <item name="protos" type="462c0819:PsiDirectoryNode" />
               <item name="MicroVision-proto" type="462c0819:PsiDirectoryNode" />
+              <item name="mvcam" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mvcamctrl" type="b2602c69:ProjectViewProjectNode" />
               <item name="mvcamctrl" type="462c0819:PsiDirectoryNode" />
+              <item name="protos" type="462c0819:PsiDirectoryNode" />
+              <item name="MicroVision-proto" type="462c0819:PsiDirectoryNode" />
+              <item name="mvcamctrl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mvcamctrl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mvcamctrl" type="462c0819:PsiDirectoryNode" />
+              <item name="protos" type="462c0819:PsiDirectoryNode" />
+              <item name="MicroVision-proto" type="462c0819:PsiDirectoryNode" />
+              <item name="mvcgi" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="mvcamctrl" type="b2602c69:ProjectViewProjectNode" />
@@ -246,11 +262,14 @@
   <component name="PropertiesComponent">
     <property name="DefaultGoTemplateProperty" value="Go File" />
     <property name="GO_FMT" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="configurable.Global.GOPATH.is.expanded" value="true" />
     <property name="configurable.Module.GOPATH.is.expanded" value="false" />
     <property name="configurable.Project.GOPATH.is.expanded" value="true" />
     <property name="go.gopath.indexing.explicitly.defined" value="true" />
+    <property name="go.import.settings.migrated" value="true" />
+    <property name="go.sdk.automatically.set" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -366,7 +385,7 @@
     <frame x="67" y="27" width="1853" height="1053" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.66450566" visible="true" weight="0.20586608" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.66450566" visible="true" weight="0.2080797" />
       <window_info id="Favorites" order="1" sideWeight="0.5024311" side_tool="true" weight="0.2733813" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4997233" weight="0.3293348" />
@@ -376,15 +395,15 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4997233" weight="0.3293348" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.48865524" visible="true" weight="0.32715377" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5113448" side_tool="true" visible="true" weight="0.32715377" />
+      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4991699" weight="0.3293348" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.4875484" visible="true" weight="0.32715377" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5124516" side_tool="true" visible="true" weight="0.32715377" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.4997233" weight="0.3293348" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info active="true" anchor="right" id="Structure" order="3" sideWeight="0.33425567" visible="true" weight="0.1759823" />
+      <window_info anchor="right" id="Structure" order="3" sideWeight="0.33425567" visible="true" weight="0.1759823" />
       <window_info anchor="right" id="Database" order="4" />
     </layout>
   </component>
@@ -450,13 +469,7 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/server/error_handler.go" />
     <entry file="file://$PROJECT_DIR$/protos/error.pb.go" />
-    <entry file="file:///usr/lib/go-1.11/src/sync/rwmutex.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="67" selection-start-line="67" selection-end-line="67" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file:///usr/lib/go-1.11/src/sync/rwmutex.go" />
     <entry file="file://$PROJECT_DIR$/../../../go.bug.st/serial.v1/serial_unix.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -471,13 +484,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/lib/go-1.11/src/bytes/buffer.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="449" column="5" selection-start-line="449" selection-start-column="5" selection-end-line="449" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file:///usr/lib/go-1.11/src/bytes/buffer.go" />
     <entry file="file://$PROJECT_DIR$/test/serial_util_test.go" />
     <entry file="file://$PROJECT_DIR$/test/concept_cancel_test.go">
       <provider selected="true" editor-type-id="text-editor">
@@ -511,20 +518,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/lib/go-1.11/src/runtime/proc.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="2486" selection-start-line="2486" selection-end-line="2486" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/lib/go-1.11/src/syscall/asm_linux_amd64.s">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="52" selection-start-line="52" selection-end-line="52" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file:///usr/lib/go-1.11/src/runtime/proc.go" />
+    <entry file="file:///usr/lib/go-1.11/src/syscall/asm_linux_amd64.s" />
     <entry file="file://$PROJECT_DIR$/../../../google.golang.org/grpc/stream.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="174">
@@ -539,20 +534,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/lib/go-1.11/src/context/context.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="206" selection-start-line="206" selection-end-line="206" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/lib/go-1.11/src/encoding/binary/binary.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="50" column="20" selection-start-line="50" selection-start-column="20" selection-end-line="50" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file:///usr/lib/go-1.11/src/context/context.go" />
+    <entry file="file:///usr/lib/go-1.11/src/encoding/binary/binary.go" />
     <entry file="file://$PROJECT_DIR$/test/serial_test.go">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -560,13 +543,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/lib/go-1.11/src/runtime/sys_linux_amd64.s">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="531" selection-start-line="531" selection-end-line="531" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file:///usr/lib/go-1.11/src/runtime/sys_linux_amd64.s" />
     <entry file="file://$PROJECT_DIR$/serial/serial_command.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -592,27 +569,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/protos/laser_control_definitions.pb.go" />
     <entry file="file://$PROJECT_DIR$/protos/laser_control_service.pb.go" />
-    <entry file="file:///usr/lib/go-1.11/src/testing/testing.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12210">
-          <caret line="830" selection-start-line="830" selection-end-line="830" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/lib/go-1.11/src/runtime/asm_amd64.s">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19995">
-          <caret line="1333" selection-start-line="1333" selection-end-line="1333" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/lib/go-1.11/src/runtime/panic.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="680" selection-start-line="680" selection-end-line="680" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file:///usr/lib/go-1.11/src/testing/testing.go" />
+    <entry file="file:///usr/lib/go-1.11/src/runtime/asm_amd64.s" />
+    <entry file="file:///usr/lib/go-1.11/src/runtime/panic.go" />
     <entry file="file://$PROJECT_DIR$/../../../google.golang.org/grpc/server.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -725,13 +684,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protos/MicroVision-proto/mvcamctrl/camera_controller_service.proto">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="1" lean-forward="true" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/server.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -741,22 +693,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/protos/MicroVision-proto/mvcamctrl/camera_controller_definitions.proto">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/server_impl.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="31" column="38" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
+        <state relative-caret-position="136">
+          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/serial/serial.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="51" column="53" selection-start-line="51" selection-start-column="53" selection-end-line="51" selection-end-column="53" />
+        <state relative-caret-position="358">
+          <caret line="59" selection-start-line="59" selection-end-line="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protos/MicroVision-proto/mvcamctrl/camera_controller_service.proto">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="1" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/server_impl.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="74" column="40" lean-forward="true" selection-start-line="74" selection-start-column="40" selection-end-line="74" selection-end-column="40" />
+          <folding>
+            <element signature="e#19#342#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
