@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="69a652a3-f1b1-4e70-b560-4055bc8bea6c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/protos/MicroVision-proto" beforeDir="false" afterPath="$PROJECT_DIR$/protos/MicroVision-proto" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/server_impl.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/server_impl.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,11 +36,41 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server/server_impl.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
-              <caret line="74" column="40" lean-forward="true" selection-start-line="74" selection-start-column="40" selection-end-line="74" selection-end-column="40" />
+            <state relative-caret-position="433">
+              <caret line="76" column="19" lean-forward="true" selection-start-line="76" selection-start-column="19" selection-end-line="76" selection-end-column="19" />
               <folding>
                 <element signature="e#19#342#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file:///usr/lib/go-1.12/src/context/context.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1530">
+              <caret line="96" column="4" selection-start-line="96" selection-start-column="4" selection-end-line="96" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
+              <folding>
+                <element signature="e#14#74#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../mvprotos/mvcamctrl/camera_controller_definitions.pb.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1904">
+              <caret line="116" column="5" selection-start-line="116" selection-start-column="5" selection-end-line="116" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -59,7 +88,7 @@
         <entry file="file://$PROJECT_DIR$/server/server.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="306">
-              <caret line="23" selection-start-line="23" selection-end-line="23" />
+              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
             </state>
           </provider>
         </entry>
@@ -78,15 +107,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
               <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/serial/serial.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="358">
-              <caret line="59" selection-start-line="59" selection-end-line="59" />
             </state>
           </provider>
         </entry>
@@ -124,6 +144,11 @@
       <find>disconnect</find>
       <find>responseWaitingList</find>
       <find>laserctrlgrpc</find>
+      <find>connected</find>
+      <find>opened</find>
+      <find>open</find>
+      <find>s</find>
+      <find>openedSerialPort</find>
     </findStrings>
     <replaceStrings>
       <replace>mvcamctrl</replace>
@@ -133,6 +158,12 @@
   <component name="Git.Settings">
     <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$/protos/MicroVision-proto" value="afe86d8745b1f497bd290b897a15479c2cfe6eb5" />
+      </map>
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -242,11 +273,6 @@
               <item name="protos" type="462c0819:PsiDirectoryNode" />
               <item name="MicroVision-proto" type="462c0819:PsiDirectoryNode" />
               <item name="mvcgi" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mvcamctrl" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mvcamctrl" type="462c0819:PsiDirectoryNode" />
-              <item name="serial" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="mvcamctrl" type="b2602c69:ProjectViewProjectNode" />
@@ -385,19 +411,19 @@
     <frame x="67" y="27" width="1853" height="1053" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.66450566" visible="true" weight="0.2080797" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.66450566" visible="true" weight="0.21250692" />
       <window_info id="Favorites" order="1" sideWeight="0.5024311" side_tool="true" weight="0.2733813" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4997233" weight="0.3293348" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4831212" weight="0.32715377" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49031544" weight="0.3991276" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4991699" weight="0.3293348" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4825678" visible="true" weight="0.32715377" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.48920864" weight="0.3991276" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4991699" weight="0.3293348" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.4875484" visible="true" weight="0.32715377" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5124516" side_tool="true" visible="true" weight="0.32715377" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.486995" weight="0.3264418" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5174322" side_tool="true" visible="true" weight="0.32715377" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.4997233" weight="0.3293348" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -429,7 +455,8 @@
     <MESSAGE value="update service name" />
     <MESSAGE value="rename file" />
     <MESSAGE value="update proto version" />
-    <option name="LAST_COMMIT_MESSAGE" value="update proto version" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -449,6 +476,11 @@
           <line>222</line>
           <option name="timeStamp" value="54" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/server/server_impl.go</url>
+          <line>58</line>
+          <option name="timeStamp" value="60" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
@@ -467,8 +499,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/server/error_handler.go" />
-    <entry file="file://$PROJECT_DIR$/protos/error.pb.go" />
     <entry file="file:///usr/lib/go-1.11/src/sync/rwmutex.go" />
     <entry file="file://$PROJECT_DIR$/../../../go.bug.st/serial.v1/serial_unix.go">
       <provider selected="true" editor-type-id="text-editor">
@@ -632,16 +662,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
-          <folding>
-            <element signature="e#14#74#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Dockerfile.amd64">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -677,6 +697,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/serial/serial.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-809">
+          <caret line="160" column="47" selection-start-line="160" selection-start-column="41" selection-end-line="160" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/server_impl.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="76" column="19" lean-forward="true" selection-start-line="76" selection-start-column="19" selection-end-line="76" selection-end-column="19" />
+          <folding>
+            <element signature="e#19#342#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/go-1.12/src/context/context.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1530">
+          <caret line="96" column="4" selection-start-line="96" selection-start-column="4" selection-end-line="96" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
+          <folding>
+            <element signature="e#14#74#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../mvprotos/mvcamctrl/camera_controller_definitions.pb.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1904">
+          <caret line="116" column="5" selection-start-line="116" selection-start-column="5" selection-end-line="116" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/build_docker.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -687,21 +748,7 @@
     <entry file="file://$PROJECT_DIR$/server/server.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protos/MicroVision-proto/mvcamctrl/camera_controller_definitions.proto">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/serial/serial.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="59" selection-start-line="59" selection-end-line="59" />
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
         </state>
       </provider>
     </entry>
@@ -712,13 +759,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/server_impl.go">
+    <entry file="file://$PROJECT_DIR$/protos/MicroVision-proto/mvcamctrl/camera_controller_definitions.proto">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="74" column="40" lean-forward="true" selection-start-line="74" selection-start-column="40" selection-end-line="74" selection-end-column="40" />
-          <folding>
-            <element signature="e#19#342#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="136">
+          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
         </state>
       </provider>
     </entry>

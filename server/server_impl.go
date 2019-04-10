@@ -18,8 +18,8 @@ const DriverVersion = "1.0"
 var log = logging.MustGetLogger("Server")
 
 type LaserCtrlServer struct {
-	serialInstance   serial.Serial
-	openedSerialPort string
+	serialInstance serial.Serial
+	opened         bool // TODO: modify when multi device is supported
 }
 
 func New() *LaserCtrlServer {
@@ -35,14 +35,10 @@ func (s *LaserCtrlServer) GetSerialDevices(context.Context, *mvcamctrl.GetSerial
 	}
 
 	for name, destination := range devList {
-		opened := false
-		if s.openedSerialPort != "" && s.openedSerialPort == destination {
-			opened = true
-		}
 		resp.DeviceList = append(resp.DeviceList, &mvcamctrl.SerialDeviceMapping{
 			Name:        name,
 			Destination: destination,
-			Connected:   opened,
+			Connected:   s.opened,
 		})
 	}
 
@@ -57,8 +53,9 @@ func (LaserCtrlServer) GetDriverVersion(context.Context, *empty.Empty) (*mvcamct
 	return &resp, nil
 }
 
-func (s *LaserCtrlServer) Connect(ctx context.Context, request *mvcamctrl.ConnectRequest) (*empty.Empty, error) {
-	var err error
+func (s *LaserCtrlServer) Connect(ctx context.Context, request *mvcamctrl.ConnectRequest) (resp *empty.Empty, err error) {
+	resp = &empty.Empty{}
+
 	switch request.DeviceIdentifier.(type) {
 	case *mvcamctrl.ConnectRequest_Path:
 		err = s.serialInstance.ConnectByPath(request.GetPath())
@@ -66,16 +63,22 @@ func (s *LaserCtrlServer) Connect(ctx context.Context, request *mvcamctrl.Connec
 		err = s.serialInstance.ConnectByName(request.GetName())
 	}
 
-	var resp empty.Empty
-
-	return &resp, err
+	if err != nil {
+		return
+	}
+	s.opened = true
+	return
 }
 
-func (s *LaserCtrlServer) Disconnect(ctx context.Context, req *mvcamctrl.ConnectRequest) (*empty.Empty, error) {
-	err := s.serialInstance.Disconnect()
+func (s *LaserCtrlServer) Disconnect(ctx context.Context, req *mvcamctrl.ConnectRequest) (resp *empty.Empty, err error) {
+	resp = &empty.Empty{}
 
-	var resp empty.Empty
-	return &resp, err
+	err = s.serialInstance.Disconnect()
+	if err != nil {
+		return
+	}
+	s.opened = false
+	return
 }
 
 func (s *LaserCtrlServer) deviceRequest(ctx context.Context, command serial.SerialCommand) ([]byte, error) {
