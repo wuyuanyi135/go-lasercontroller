@@ -70,15 +70,15 @@ func ListSerialPorts() (map[string]string, error) {
 	return mapping, nil
 }
 
-func (s *Serial) ConnectByName(name string) error {
+func (s *Serial) ConnectByName(name string) (error, string) {
 	mapping, err := ListSerialPorts()
 
 	if err != nil {
 		errMsg := fmt.Sprintf("Failed to list port: " + err.Error())
-		return errors.New(errMsg)
+		return errors.New(errMsg), ""
 	}
 
-	return s.ConnectByPath(mapping[name])
+	return s.ConnectByPath(mapping[name]), mapping[name]
 }
 
 func (s *Serial) ConnectByPath(p string) error {
@@ -104,27 +104,6 @@ func (s *Serial) ConnectByPath(p string) error {
 	go s.serialReceiver()
 	go s.responseHandler()
 
-	//err=s.instance.ResetInputBuffer()
-	//if err != nil {
-	//	errMsg := fmt.Sprintf("failed to get modem bits: %s", err.Error())
-	//	s.instance = nil
-	//	return errors.New(errMsg)
-	//}
-	// TODO: after connection it seems the message cannot be sent immediately?
-	//for {
-	//	bits, err := s.instance.GetModemStatusBits()
-	//	if err != nil {
-	//		errMsg := fmt.Sprintf("failed to get modem bits: %s", err.Error())
-	//		s.instance = nil
-	//		return errors.New(errMsg)
-	//	}
-	//
-	//	if bits.CTS == false {
-	//		break
-	//	}
-	//
-	//	time.Sleep(50*time.Millisecond)
-	//}
 	time.Sleep(500 * time.Millisecond)
 	return nil
 }

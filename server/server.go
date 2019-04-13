@@ -1,7 +1,7 @@
 package mvcamctrl
 
 import (
-	"github.com/wuyuanyi135/mvprotos/mvcamctrl"
+	"github.com/wuyuanyi135/mvprotos/mvpulse"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
 	"net"
@@ -9,7 +9,7 @@ import (
 
 func StartServer() {
 	grpcServer := grpc.NewServer()
-	mvcamctrl.RegisterMicroVisionCameraControlServiceServer(grpcServer, New())
+	mvpulse.RegisterMicroVisionPulseServiceServer(grpcServer, NewPulseSerice())
 	reflection.Register(grpcServer)
 	lis, err := net.Listen("tcp", ":3050")
 	if err != nil {
