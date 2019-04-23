@@ -4,6 +4,7 @@ import (
 	"context"
 	"encoding/binary"
 	"errors"
+	"github.com/golang/protobuf/ptypes/wrappers"
 	"github.com/olebedev/emitter"
 	"github.com/op/go-logging"
 	"github.com/wuyuanyi135/mvcamctrl/serial"
@@ -325,8 +326,7 @@ func (s *PulseSerice) GetPulseParam(ctx context.Context, req *mvpulse.GetPulsePa
 		log.Errorf("Failed to get exposure: %s", err)
 		return
 	}
-
-	resp.Pulse.ExposureTick.Value = uint32(binary.LittleEndian.Uint16(param))
+	resp.Pulse.ExposureTick = &wrappers.UInt32Value{Value: uint32(binary.LittleEndian.Uint16(param))}
 
 	// filter
 	b = make([]byte, command.CommandGetFilter.ResponseLength)
@@ -343,7 +343,7 @@ func (s *PulseSerice) GetPulseParam(ctx context.Context, req *mvpulse.GetPulsePa
 		return
 	}
 
-	resp.Pulse.DigitalFilter.Value = uint32(binary.LittleEndian.Uint16(param))
+	resp.Pulse.DigitalFilter = &wrappers.UInt32Value{Value: uint32(binary.LittleEndian.Uint16(param))}
 
 	// delay
 	b = make([]byte, command.CommandGetDelay.ResponseLength)
@@ -359,7 +359,7 @@ func (s *PulseSerice) GetPulseParam(ctx context.Context, req *mvpulse.GetPulsePa
 		log.Errorf("Failed to get delay: %s", err)
 		return
 	}
-	resp.Pulse.PulseDelay.Value = uint32(binary.LittleEndian.Uint16(param))
+	resp.Pulse.PulseDelay = &wrappers.UInt32Value{Value: uint32(binary.LittleEndian.Uint16(param))}
 
 	// polarity
 	b = make([]byte, command.CommandGetPolarity.ResponseLength)
@@ -375,7 +375,7 @@ func (s *PulseSerice) GetPulseParam(ctx context.Context, req *mvpulse.GetPulsePa
 		log.Errorf("Failed to get delay: %s", err)
 		return
 	}
-	resp.Pulse.Polarity.Value = param[0] == 1
+	resp.Pulse.Polarity = &wrappers.BoolValue{Value: param[0] == 1}
 
 	return
 }

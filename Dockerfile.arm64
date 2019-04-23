@@ -1,8 +1,7 @@
-FROM arm64v8/golang:1.11.2-alpine3.8
+FROM arm64v8/golang:1.11.2-alpine3.8 as build
 RUN apk add --no-cache git protobuf-dev gcc libc-dev bash \
 && go get -u google.golang.org/grpc && go get -u github.com/golang/protobuf/protoc-gen-go \
 && echo "export PATH=$PATH:$GOPATH/bin" >> /etc/profile
-EXPOSE 3050
 WORKDIR /root
 
 RUN mkdir -p $GOPATH/src/github.com/wuyuanyi135/mvcamctrl &&\
@@ -12,4 +11,8 @@ bash ./protoc.sh && \
 cd $GOPATH/src/github.com/wuyuanyi135/mvcamctrl && \
 ./build.sh
 
-CMD '/go/bin/mvcamctrl'
+
+FROM arm64v8/alpine:3.8
+EXPOSE 3050
+COPY --from=build /go/bin/mvcamctrl /bin/mvcamctrl
+CMD '/bin/mvcamctrl'
