@@ -21,6 +21,8 @@ const (
 	COMMAND_COMMIT_PARAMETERS_0_0 Command = 0x50
 	COMMAND_SET_POWER_1_0         Command = 0x30
 	COMMAND_GET_POWER_0_1         Command = 0x31
+	COMMAND_SET_POLARITY_1_0      Command = 0x60
+	COMMAND_GET_POLARITY_0_1      Command = 0x61
 )
 
 type CommandMeta struct {
@@ -42,3 +44,5 @@ var CommandGetDelay = CommandMeta{Command: COMMAND_GET_DELAY_0_2, RequestLength:
 var CommandCommitParameters = CommandMeta{Command: COMMAND_COMMIT_PARAMETERS_0_0, RequestLength: 0, ResponseLength: 0}
 var CommandSetPower = CommandMeta{Command: COMMAND_SET_POWER_1_0, RequestLength: 1, ResponseLength: 0}
 var CommandGetPower = CommandMeta{Command: COMMAND_GET_POWER_0_1, RequestLength: 0, ResponseLength: 1}
+var CommandSetPolarity = CommandMeta{Command: COMMAND_SET_POLARITY_1_0, RequestLength: 1, ResponseLength: 0}
+var CommandGetPolarity = CommandMeta{Command: COMMAND_GET_POLARITY_0_1, RequestLength: 0, ResponseLength: 1}

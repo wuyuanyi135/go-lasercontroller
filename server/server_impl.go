@@ -79,7 +79,10 @@ func (s *PulseSerice) DriverVersion(context.Context, *mvpulse.DriverVersionReq) 
 
 func (s *PulseSerice) Connect(ctx context.Context, req *mvpulse.ConnectReq) (resp *mvpulse.ConnectRes, err error) {
 	resp = &mvpulse.ConnectRes{}
-
+	if s.State.Opened && (s.State.OpenedDevice.Name == req.GetName() || s.State.OpenedDevice.Path == req.GetPath()) {
+		log.Warning("Repeat open detected. Ignore.")
+		return
+	}
 	var path, name string
 	switch req.DeviceIdentifier.(type) {
 	case *mvpulse.ConnectReq_Path:
@@ -211,46 +214,74 @@ func (s *PulseSerice) SetPulseParam(ctx context.Context, req *mvpulse.SetPulsePa
 
 	config := req.Pulse
 
-	b := make([]byte, command.CommandSetExposure.RequestLength)
-	binary.LittleEndian.PutUint16(b, uint16(config.ExposureTick))
-	_, err = s.deviceRequest(
-		ctx,
-		serial.SerialCommand{
-			Command: command.CommandSetExposure,
-			Arg:     b,
-		},
-	)
-	if err != nil {
-		log.Errorf("Failed to set exposure: %s", err)
-		return
+	if config.ExposureTick != nil {
+		b := make([]byte, command.CommandSetExposure.RequestLength)
+		binary.LittleEndian.PutUint16(b, uint16(config.ExposureTick.Value))
+		_, err = s.deviceRequest(
+			ctx,
+			serial.SerialCommand{
+				Command: command.CommandSetExposure,
+				Arg:     b,
+			},
+		)
+		if err != nil {
+			log.Errorf("Failed to set exposure: %s", err)
+			return
+		}
 	}
 
-	b = make([]byte, command.CommandSetFilter.RequestLength)
-	binary.LittleEndian.PutUint16(b, uint16(config.DigitalFilter))
-	_, err = s.deviceRequest(
-		ctx,
-		serial.SerialCommand{
-			Command: command.CommandSetFilter,
-			Arg:     b,
-		},
-	)
-	if err != nil {
-		log.Errorf("Failed to set filter: %s", err)
-		return
+	if config.DigitalFilter != nil {
+		b := make([]byte, command.CommandSetFilter.RequestLength)
+		binary.LittleEndian.PutUint16(b, uint16(config.DigitalFilter.Value))
+		_, err = s.deviceRequest(
+			ctx,
+			serial.SerialCommand{
+				Command: command.CommandSetFilter,
+				Arg:     b,
+			},
+		)
+		if err != nil {
+			log.Errorf("Failed to set filter: %s", err)
+			return
+		}
 	}
 
-	b = make([]byte, command.CommandSetDelay.RequestLength)
-	binary.LittleEndian.PutUint16(b, uint16(config.PulseDelay))
-	_, err = s.deviceRequest(
-		ctx,
-		serial.SerialCommand{
-			Command: command.CommandSetDelay,
-			Arg:     b,
-		},
-	)
-	if err != nil {
-		log.Errorf("Failed to set exposure: %s", err)
-		return
+	if config.PulseDelay != nil {
+		b := make([]byte, command.CommandSetDelay.RequestLength)
+		binary.LittleEndian.PutUint16(b, uint16(config.PulseDelay.Value))
+		_, err = s.deviceRequest(
+			ctx,
+			serial.SerialCommand{
+				Command: command.CommandSetDelay,
+				Arg:     b,
+			},
+		)
+		if err != nil {
+			log.Errorf("Failed to set exposure: %s", err)
+			return
+		}
+	}
+
+	if config.Polarity != nil {
+		var polarity uint8
+		if config.Polarity.Value {
+			polarity = 1
+		} else {
+			polarity = 0
+		}
+		b := make([]byte, command.CommandSetPolarity.RequestLength)
+		b[0] = polarity
+		_, err = s.deviceRequest(
+			ctx,
+			serial.SerialCommand{
+				Command: command.CommandSetPolarity,
+				Arg:     b,
+			},
+		)
+		if err != nil {
+			log.Errorf("Failed to set exposure: %s", err)
+			return
+		}
 	}
 
 	if req.Commit {
@@ -295,7 +326,7 @@ func (s *PulseSerice) GetPulseParam(ctx context.Context, req *mvpulse.GetPulsePa
 		return
 	}
 
-	resp.Pulse.ExposureTick = uint32(binary.LittleEndian.Uint16(param))
+	resp.Pulse.ExposureTick.Value = uint32(binary.LittleEndian.Uint16(param))
 
 	// filter
 	b = make([]byte, command.CommandGetFilter.ResponseLength)
@@ -312,7 +343,7 @@ func (s *PulseSerice) GetPulseParam(ctx context.Context, req *mvpulse.GetPulsePa
 		return
 	}
 
-	resp.Pulse.DigitalFilter = uint32(binary.LittleEndian.Uint16(param))
+	resp.Pulse.DigitalFilter.Value = uint32(binary.LittleEndian.Uint16(param))
 
 	// delay
 	b = make([]byte, command.CommandGetDelay.ResponseLength)
@@ -328,8 +359,23 @@ func (s *PulseSerice) GetPulseParam(ctx context.Context, req *mvpulse.GetPulsePa
 		log.Errorf("Failed to get delay: %s", err)
 		return
 	}
+	resp.Pulse.PulseDelay.Value = uint32(binary.LittleEndian.Uint16(param))
 
-	resp.Pulse.PulseDelay = uint32(binary.LittleEndian.Uint16(param))
+	// polarity
+	b = make([]byte, command.CommandGetPolarity.ResponseLength)
+
+	param, err = s.deviceRequest(
+		ctx,
+		serial.SerialCommand{
+			Command: command.CommandGetPolarity,
+			Arg:     b,
+		},
+	)
+	if err != nil {
+		log.Errorf("Failed to get delay: %s", err)
+		return
+	}
+	resp.Pulse.Polarity.Value = param[0] == 1
 
 	return
 }
